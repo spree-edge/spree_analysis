@@ -8,13 +8,13 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_analysis'
   s.version     = SpreeAnalysis.version
-  s.summary     = 'Add extension summary here'
-  s.description = 'Add (optional) extension description here'
+  s.summary     = 'A spree extension that provides detailed analysis reports on commerce metrics'
+  s.description = 'It provides detailed analysis reports using chartJS, that is useful for building right stragery for marketing, finding lacks and areas to make improve on'
   s.required_ruby_version = '>= 2.5'
 
-  s.author    = 'You'
-  s.email     = 'you@example.com'
-  s.homepage  = 'https://github.com/your-github-handle/spree_analysis'
+  s.author    = 'Rahul Singh'
+  s.email     = 'radolf@bluebash.co'
+  s.homepage  = 'https://github.com/spree-edge/spree_analysis'
   s.license = 'BSD-3-Clause'
 
   s.files       = `git ls-files`.split("\n").reject { |f| f.match(/^spec/) && !f.match(/^spec\/fixtures/) }
