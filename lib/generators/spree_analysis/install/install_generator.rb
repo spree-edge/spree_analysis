@@ -1,7 +1,12 @@
 module SpreeAnalysis
   module Generators
     class InstallGenerator < Rails::Generators::Base
+      source_root(File.expand_path(File.dirname(__FILE__)))
       class_option :migrate, type: :boolean, default: true
+
+      def copy_initializer
+        copy_file 'spree_analysis.rb', 'config/initializers/spree_analysis.rb'
+      end
 
       def add_migrations
         run 'bundle exec rake railties:install:migrations FROM=spree_analysis'
