@@ -2,7 +2,7 @@
 
   <% Spree::ReportGenerationService.reports.each do |_key, _value| %>
     <li class="sidebar-menu-item <%= (selected?(params[:report_category], _key) ? 'selected' : '') %>">
-      <%= link_to Spree.t(_key), admin_insight_path(report_category: _key, id: _value.first)  %>
+      <%= link_to Spree.t(_key), admin_analysis_path(report_category: _key, id: _value.first), class: "sidebar-submenu-item w-100 py-2 py-md-1 pl-3 d-block" %>
     </li>
   <% end %>
 </ul>
