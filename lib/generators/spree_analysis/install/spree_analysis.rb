@@ -14,7 +14,7 @@ reports = {
   user_analysis:              [:user_pool, :users_not_converted, :users_who_recently_purchased],
 }
 
-SpreeAnalysis::Config.configure do |config|
+SpreeAnalysis::ReportConfig.configure do |config|
   reports.keys.each do |report_category|
     config.register_report_category(report_category)
     reports[report_category].each { |report| config.register_report(report_category, report) }
