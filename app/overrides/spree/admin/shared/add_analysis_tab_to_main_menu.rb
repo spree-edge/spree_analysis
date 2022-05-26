@@ -5,7 +5,7 @@ Deface::Override.new(
   text: <<-HTML
     <% if can? :admin, current_store %>
       <ul class="nav nav-sidebar border-bottom" id="sidebarAnalysis">
-        <%= main_menu_tree Spree.t(:tab_heading, scope: :analysis), icon: "report.svg", sub_menu: "analysis_reports", url: "#sidebar-analysis" %>
+        <%= main_menu_tree Spree.t(:tab_heading, scope: :analysis), icon: "report.svg", sub_menu: "analysis", url: "#sidebar-analysis" %>
       </ul>
     <% end %>
   HTML
