@@ -4,7 +4,7 @@ require 'spree_analysis/engine'
 require 'spree_analysis/version'
 
 module SpreeAnalysis
-  class Config
+  class ReportConfig
     def self.configure
       yield configuration if block_given?
     end

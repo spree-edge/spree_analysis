@@ -1,7 +1,7 @@
 module SpreeAnalysis
   module Spree
     module BaseHelperDecorator
-      include AnalysisHelper
+      include ::Spree::AnalysisHelper
     end
   end
 end
