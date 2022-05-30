@@ -8,7 +8,9 @@
 
 <div id='insights-div' class='container-fluid' >
   <div class="row">
-    <%= select_tag :reports, options_for_select(@reports.map { |report_name| [ Spree.t(:title, scope: [:analysis, @report_name]), report_name, data: { url: admin_analysis_url(report_name, report_category: params[:report_category]) }] }.unshift(['Select a report', '', data: { url: admin_analysis_index_url(report_category: params[:report_category]) }, disabled: true]), @report_name || ''), class: 'select2' %>
+    <div class='w-100'>
+      <%= select_tag :reports, options_for_select(@reports.map { |report_name| [ Spree.t(:title, scope: [:analysis, @report_name]), report_name, data: { url: admin_analysis_url(report_name, report_category: params[:report_category]) }] }.unshift(['Select a report', '', data: { url: admin_analysis_index_url(report_category: params[:report_category]) }, disabled: true]), @report_name || ''), class: 'select2' %>
+    </div>
   </div>
 </div>
 
