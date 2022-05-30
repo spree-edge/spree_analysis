@@ -193,7 +193,7 @@ ReportLoader.prototype.setDownloadLinksPath = function($selectedOption) {
 
 ReportLoader.prototype.populateInsightsDataWithoutState = function(data) {
   this.isStatePushable = false;
-  //this.populateInsightsData(data);
+  this.populateInsightsData(data);
 };
 
 ReportLoader.prototype.pushUrlToHistory = function() {
