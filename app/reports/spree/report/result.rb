@@ -73,7 +73,7 @@ module Spree
       def headers
         report.class::HEADERS.keys.collect do |header|
           header_description = {
-            name: Spree.t(header.to_sym, scope: [:insight, report.name]),
+            name: Spree.t(header.to_sym, scope: [:analysis, report.name]),
             value: header,
             type: report.class::HEADERS[header],
             sortable: header.in?(report.class::SORTABLE_ATTRIBUTES)

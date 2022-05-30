@@ -8,7 +8,7 @@
 
 <div id='insights-div' class='container-fluid' >
   <div class="row">
-    <%= select_tag :reports, options_for_select(@reports.map { |report_name| [ Spree.t(:title, scope: [:analysis, report_name]), report_name, data: { url: admin_analysis_url(report_name, report_category: params[:report_category]) }] }.unshift(['Select a report', '', data: { url: admin_analysis_index_url(report_category: params[:report_category]) }, disabled: true]), @report_name || ''), class: 'select2' %>
+    <%= select_tag :reports, options_for_select(@reports.map { |report_name| [ Spree.t(:title, scope: [:analysis, @report_name]), report_name, data: { url: admin_analysis_url(report_name, report_category: params[:report_category]) }] }.unshift(['Select a report', '', data: { url: admin_analysis_index_url(report_category: params[:report_category]) }, disabled: true]), @report_name || ''), class: 'select2' %>
   </div>
 </div>
 
@@ -18,14 +18,15 @@
   <div id='search-div' class='hide'>
     <div class="filter-wrap row">
       <div class="col-sm-12">
-        <div class="input-group index-filter-button">
+        <div class="input-group index-filter-button flex-nowrap">
           <span class="input-group-btn">
-            <button class="btn btn-default js-show-index-filters" type="button">
+            <button class="btn btn-default js-show-index-filters m-0" type="button">
               <span class="icon icon-chevron-right"></span>
               <%= Spree.t(:filter) %>
             </button>
           </span>
-          <%= form_tag form_action(@report_name, params[:report_category]), id: "quick-search" do %>
+          
+          <%= form_tag form_action(@report_name, params[:report_category]), id: "quick-search", class: "flex-grow-1" do %>
             <%= text_field_tag :quick_search, nil, class: "form-control js-quick-search", placeholder: Spree.t(:quick_search) %>
           <% end %>
         </div>
@@ -39,35 +40,35 @@
 
   <%= render 'chart' %>
 
-  <div id="table-helpers" class="row pull-right hide">
+  <div id="table-helpers" class="row float-right hide">
     <span id="page-selector">
-      <span class="select-box-slide pull-right">
-        <%= select_tag :per_page, options_for_select(page_selector_options, params[:per_page] || SpreeAnalysis::Config[:records_per_page]), class: 'form-control text-right pull-right page-select' %>
+      <span class="select-box-slide float-right">
+        <%= select_tag :per_page, options_for_select(page_selector_options, params[:per_page] || SpreeAnalysis::Config[:records_per_page]), class: 'form-control text-right float-right page-select border' %>
       </span>
-      <span title="apply pagination" class="col-md-2 hide pull-right">
-        <%= link_to '#', class: 'btn btn-default', id: 'apply-pagination' do %>
+      <span title="apply pagination" class="col-md-2 hide">
+        <%= link_to '#', class: 'btn btn-default border', id: 'apply-pagination' do %>
           <span class="glyphicon glyphicon-eye-open"></span>
         <% end %>
       </span>
-      <span title="remove pagination" class="col-md-2 pull-right">
-        <%= link_to '#', class: 'btn btn-default', id: 'remove-pagination' do %>
+      <span title="remove pagination" class="col-md-2">
+        <%= link_to '#', class: 'btn btn-default border', id: 'remove-pagination' do %>
           <span class="glyphicon glyphicon-eye-close"></span>
         <% end %>
       </span>
     </span>
     <span id='page-helpers'>
-      <span title="reset" class="col-md-2 pull-right">
-        <%= link_to '#', class: 'btn btn-default', id: 'reset' do %>
+      <span title="reset" class="col-md-2">
+        <%= link_to '#', class: 'btn btn-default border', id: 'reset' do %>
           <span  class="glyphicon glyphicon-repeat"></span>
         <% end %>
       </span>
-      <span title="refresh" class="col-md-2 pull-right">
-        <%= link_to '#', class: 'btn btn-default', id: 'refresh' do %>
+      <span title="refresh" class="col-md-2">
+        <%= link_to '#', class: 'btn btn-default border', id: 'refresh' do %>
           <span class="glyphicon glyphicon-refresh"></span>
         <% end %>
       </span>
-      <span title="download" class="col-md-2 pull-right">
-        <%= link_to '#', class: "btn btn-default dropdown-toggle", data: { toggle: 'dropdown' } do %>
+      <span title="download" class="col-md-2">
+        <%= link_to '#', class: "btn btn-default border dropdown-toggle", data: { toggle: 'dropdown' } do %>
           <span class="glyphicon glyphicon-download"></span>
         <% end %>
         <ul class="dropdown-menu">
@@ -77,7 +78,7 @@
           <li><%= link_to 'PDF', admin_analysis_download_path(format: 'pdf'), class: 'download-link', data: { url: admin_analysis_download_path(format: 'pdf') }%></li>
         </ul>
       </span>
-    </div>
+    </span>
   </div>
 
   <div id='report-div'>
