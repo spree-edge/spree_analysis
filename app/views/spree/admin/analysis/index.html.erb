@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
 <% content_for :page_title do %>
   <%= Spree.t(:heading, type: params[:report_category].to_s.titleize, scope: :analysis) %>
 <% end %>
@@ -14,10 +17,10 @@
   </div>
 </div>
 
-<%= content_tag(:div, class: 'hidden report-data', data: { report_data: @report_data_json }) {} %>
+<%= content_tag(:div, class: 'd-none report-data', data: { report_data: @report_data_json }) {} %>
 
 <div id='report-container'>
-  <div id='search-div' class='hide'>
+  <div id='search-div' class='d-none'>
     <div class="filter-wrap row">
       <div class="col-sm-12">
         <div class="input-group index-filter-button flex-nowrap">
@@ -43,12 +46,12 @@
 
   <%= render 'chart' %>
 
-  <div id="table-helpers" class="row float-right hide">
+  <div id="table-helpers" class="row float-right d-none">
     <span id="page-selector">
       <span class="select-box-slide float-right">
         <%= select_tag :per_page, options_for_select(page_selector_options, params[:per_page] || SpreeAnalysis::Config[:records_per_page]), class: 'form-control text-right float-right page-select border' %>
       </span>
-      <span title="apply pagination" class="col-md-2 hide">
+      <span title="apply pagination" class="col-md-2 d-none">
         <%= link_to '#', class: 'btn btn-default border', id: 'apply-pagination' do %>
           <span class="glyphicon glyphicon-eye-open"></span>
         <% end %>
