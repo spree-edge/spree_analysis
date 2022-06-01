@@ -1,5 +1,5 @@
 <script type="text/x-tmpl" id="search-tmpl">
-  <div data-hook="admin_insights_sidebar">
+  <div data-hook="admin_insights_sidebar" class='card-body'>
     <form id="filter-search" action="{%= o['url'] %}" accept-charset="UTF-8" method="get">
       <div class="quick_search_form">
       </div>

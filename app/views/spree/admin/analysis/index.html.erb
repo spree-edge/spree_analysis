@@ -36,7 +36,7 @@
             <%= text_field_tag :quick_search, nil, class: "form-control js-quick-search-target", placeholder: Spree.t(:quick_search) %>
           <% end %>
         </div>
-        <div id="table-filter" data-hook class="well filter-well">
+        <div id="table-filter" data-hook class="well filter-well card bg-light">
         </div>
       </div>
     </div>
@@ -78,10 +78,10 @@
           <span class="glyphicon glyphicon-download"></span>
         <% end %>
         <ul class="dropdown-menu">
-          <li><%= link_to 'CSV', admin_analysis_download_path(format: 'csv'), class: 'download-link', data: { url: admin_analysis_download_path(format: 'csv') } %></li>
-          <li><%= link_to 'Excel', admin_analysis_download_path(format: 'xls'), class: 'download-link',  data: { url: admin_analysis_download_path(format: 'xls') }%></li>
-          <li><%= link_to 'Text', admin_analysis_download_path(format: 'text'), class: 'download-link',  data: { url: admin_analysis_download_path(format: 'text') }%></li>
-          <li><%= link_to 'PDF', admin_analysis_download_path(format: 'pdf'), class: 'download-link', data: { url: admin_analysis_download_path(format: 'pdf') }%></li>
+          <li><%= link_to 'CSV', admin_analysis_download_path(format: 'csv'), class: 'download-link dropdown-item', data: { url: admin_analysis_download_path(format: 'csv') } %></li>
+          <li><%= link_to 'Excel', admin_analysis_download_path(format: 'xls'), class: 'download-link dropdown-item',  data: { url: admin_analysis_download_path(format: 'xls') }%></li>
+          <li><%= link_to 'Text', admin_analysis_download_path(format: 'text'), class: 'download-link dropdown-item',  data: { url: admin_analysis_download_path(format: 'text') }%></li>
+          <li><%= link_to 'PDF', admin_analysis_download_path(format: 'pdf'), class: 'download-link dropdown-item', data: { url: admin_analysis_download_path(format: 'pdf') }%></li>
         </ul>
       </span>
     </span>
