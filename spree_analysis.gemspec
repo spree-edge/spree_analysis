@@ -24,6 +24,8 @@ Gem::Specification.new do |s|
   spree_version = '>=4.4.0'
   s.add_dependency 'spree', spree_version
   s.add_dependency 'spree_extension'
+  s.add_dependency 'wicked_pdf'
+  s.add_dependency 'wkhtmltopdf-binary'
 
   s.add_development_dependency 'deface'
   s.add_development_dependency 'spree_dev_tools'
