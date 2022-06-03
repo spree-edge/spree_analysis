@@ -124,14 +124,14 @@ ReportLoader.prototype.fetchChartData = function(url, $selectedOption) {
     success: function(data) {
       (_this.isStatePushable ? _this.populateInsightsData(data) : _this.populateInsightsDataWithoutState(data))
       if(data.headers != undefined) {
-        _this.tableHelpers.removeClass('hide');
+        _this.tableHelpers.removeClass('d-none');
         if(data.pagination_required == false) {
-          _this.pageSelector.addClass('hide');
+          _this.pageSelector.addClass('d-none');
           $.each(_this.pageHelpers.find('.col-md-2'), function(index, object) {
             $(object).removeClass('col-md-2').addClass('col-md-3');
           });
         } else {
-          _this.pageSelector.removeClass('hide');
+          _this.pageSelector.removeClass('d-none');
           $.each(_this.pageHelpers.find('.col-md-3'), function(index, object) {
             $(object).removeClass('col-md-3').addClass('col-md-2');
           });
@@ -150,14 +150,14 @@ ReportLoader.prototype.fetchChartData = function(url, $selectedOption) {
 ReportLoader.prototype.buildChart = function(data) {
   var chart_container = $('#chart-container');
   if ((data['chart_json'] != undefined) && (data['chart_json']['chart'])) {
-    chart_container.empty().removeClass('hidden');
+    chart_container.empty().removeClass('d-none');
     $.each(data['chart_json']['charts'], function(index, chart) {
       var chart_div = $('<div>', { id: chart['id'] });
       chart_container.append(chart_div);
       chart_div.highcharts(chart['json']);
     });
   } else {
-    chart_container.addClass('hidden');
+    chart_container.addClass('d-none');
   }
 };
 
@@ -175,7 +175,7 @@ ReportLoader.prototype.populateInsightsData = function(data) {
     this.$insightsTableList.empty();
     this.paginatorDiv.empty();
     this.filterDiv.addClass('hide');
-    this.chartContainer.addClass('hidden');
+    this.chartContainer.addClass('d-none');
   }
   if(this.isStatePushable) {
     this.pushUrlToHistory();
