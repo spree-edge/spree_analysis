@@ -21,8 +21,7 @@ Searcher.prototype.bindEvents = function(data) {
 Searcher.prototype.refreshSearcher = function($selectedInsight, data) {
   var requestPath = $selectedInsight.data('url'),
     _this = this;
-
-  _this.$filters.removeClass('hide');
+  _this.$filters.removeClass('d-none');
   _this.addSearchForm(data);
   _this.setFormActions(_this.$quickSearchForm, requestPath);
   _this.setFormActions(_this.$filterForm, requestPath);
@@ -63,7 +62,7 @@ Searcher.prototype.addSearchStatus = function () {
       }
 
       label = label.text() + ': ' + ransack_value;
-      filter = '<span class="js-filter label label-default" data-ransack-field="' + ransack_field + '">' + label + '<span class="icon icon-delete js-delete-filter"></span></span>';
+      filter = '<span class="js-filter badge badge-secondary d-inline-flex align-items-center" data-ransack-field="' + ransack_field + '">' + label + '<i class="icon icon-cancel ml-2 js-delete-filter"></i></span>';
 
       filtersContainer.append(filter).show();
     }
