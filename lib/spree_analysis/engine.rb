@@ -1,6 +1,8 @@
 module SpreeAnalysis
   class Engine < Rails::Engine
     require 'spree/core'
+    require 'wicked_pdf'
+    require 'csv'
     isolate_namespace Spree
     engine_name 'spree_analysis'
 
@@ -8,6 +10,8 @@ module SpreeAnalysis
     config.generators do |g|
       g.test_framework :rspec
     end
+
+    config.assets.precompile << 'spree/backend/override_pdf.css'
 
     initializer 'spree_analysis.environment', before: :load_config_initializers do |_app|
       SpreeAnalysis::Config = SpreeAnalysis::Configuration.new
