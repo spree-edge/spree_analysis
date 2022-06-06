@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= wicked_pdf_stylesheet_link_tag "spree/backend/override_pdf" %>
+  <%= stylesheet_link_tag wicked_pdf_asset_base64("spree/backend/override_pdf") %>
 </head>
 <body>
   <%= yield %>
