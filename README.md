@@ -1,6 +1,6 @@
-# SpreeAnalysis [WIP]
+# Spree Analysis [WIP]
 
-Introduction goes here.
+This extension is an updated version of vinsol [spree-admin-insights](https://github.com/vinsol-spree-contrib/spree-admin-insights) extension. It is compatiable with latest version of [spree](https://github.com/spree/spree), includes all the reports that spree-admin-insignts has, along with some additional useful reports.
 
 ## Installation
 
