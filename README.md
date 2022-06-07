@@ -1,6 +1,14 @@
 # Spree Analysis [WIP]
 
+## About
+
 This extension is an updated version of vinsol [spree-admin-insights](https://github.com/vinsol-spree-contrib/spree-admin-insights) extension. It is compatiable with latest version of [spree](https://github.com/spree/spree), includes all the reports that spree-admin-insignts has, along with some additional useful reports.
+
+## Key Features
+
+* It includes all reports of spree spree-admin-insights.
+* It includes additional reports that includes bla bla bla. 
+* Added support with latest spree version.
 
 ## Installation
 
@@ -51,10 +59,12 @@ bundle exec gem release
 
 For more options please see [gem-release README](https://github.com/svenfuchs/gem-release)
 
+---
+
 ## Contributing
 
-If you'd like to contribute, please take a look at the
-[instructions](CONTRIBUTING.md) for installing dependencies and crafting a good
-pull request.
+[See corresponding guidelines](https://github.com/spree-edge/spree_analysis/blob/master/CONTRIBUTING.md)
 
-Copyright (c) 2022 [name of extension creator], released under the New BSD License
+---
+
+Copyright (c) 2022 Spree Edge. released under the [New BSD License](https://github.com/spree-edge/spree_analysis/blob/master/LICENSE)
