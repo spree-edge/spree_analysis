@@ -50,7 +50,7 @@ module Spree
         def ensure_report_exists
           @report_name = params[:id].to_sym
           unless ReportGenerationService.report_exists?(get_report_category, @report_name)
-            redirect_to admin_insights_path, alert: Spree.t(:not_found, scope: [:insights, :analysis])
+            redirect_to admin_analysis_index_path, alert: Spree.t(:not_found, scope: [:insights, :analysis])
           end
         end
 

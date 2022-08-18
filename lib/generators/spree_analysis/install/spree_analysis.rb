@@ -2,7 +2,8 @@ reports = {
   finance_analysis:           [
     :payment_method_transactions, :payment_method_transactions_conversion_rate,
     :shipping_cost, :sales_tax, :sales_performance
-  ]
+  ],
+  user_analysis:              [:users_not_converted, :users_who_recently_purchased]
 }
 
 SpreeAnalysis::ReportConfig.configure do |config|
