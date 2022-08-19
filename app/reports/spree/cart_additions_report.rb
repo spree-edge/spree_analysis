@@ -20,15 +20,14 @@ module Spree
     def report_query
       Spree::Order
         .incomplete
-        .joins(variant: :product)
+        .joins(line_items: { variant: :product })
         .where(created_at: reporting_period)
         .group('product_name', 'product_slug', 'spree_variants.sku')
         .select(
           'spree_products.name             as product_name',
           'spree_products.slug             as product_slug',
           'spree_variants.sku              as sku',
-          'count(spree_products.name)      as additions',
-          'sum(spree_cart_events.quantity) as quantity_change'
+          'count(spree_products.name)      as additions'
         )
     end
   end

@@ -4,9 +4,7 @@ reports = {
     :shipping_cost, :sales_tax, :sales_performance
   ],
   product_analysis:           [
-    :best_selling_products, :cart_additions, :cart_removals, :cart_updations,
-    :product_views, :product_views_to_cart_additions,
-    :product_views_to_purchases, :unique_purchases,
+    :best_selling_products, :cart_additions, :unique_purchases,
     :returned_products
   ]
 }
