@@ -1,4 +1,6 @@
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<% content_for :head do %>
+  <%= javascript_include_tag 'https://code.highcharts.com/highcharts.js', data: { turbo_track: "reload" }%>
+  <%= javascript_include_tag 'https://code.highcharts.com/modules/exporting.js', data: { turbo_track: "reload" } %>
+<% end %>
 
 <div id="chart-container" style="margin: 0 auto" class='d-none mt-3'></div>

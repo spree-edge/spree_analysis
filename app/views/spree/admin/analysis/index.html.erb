@@ -1,5 +1,7 @@
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css', media: 'screen', data: { turbo_track: "reload" } %>
+  <%= javascript_include_tag 'https://code.jquery.com/ui/1.13.1/jquery-ui.js', data: { turbo_track: "reload" } %>
+<% end  %>
 
 <% content_for :page_title do %>
   <%= Spree.t(:heading, type: params[:report_category].to_s.titleize, scope: :analysis) %>
