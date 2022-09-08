@@ -1,4 +1,4 @@
-<ul id="sidebar-analysis" class="border-top bg-white nav nav-pills nav-stacked" data-hook="analysis_reports">
+<ul id="sidebar-analysis" class="border-top bg-white collapse nav nav-pills nav-stacked" data-hook="analysis_reports">
   <% Spree::ReportGenerationService.reports.each do |_key, _value| %>
     <li class="sidebar-menu-item d-block w-100 position-relative <%= (selected?(params[:report_category], _key) ? 'selected' : '') %>">
       <%= link_to Spree.t(_key), admin_analysis_path(report_category: _key, id: _value.first), class: "sidebar-submenu-item w-100 py-2 py-md-1 pl-3 d-block" %>
