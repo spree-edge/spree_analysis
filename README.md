@@ -2,13 +2,33 @@
 
 ## About
 
-This extension is an updated version of vinsol [spree-admin-insights](https://github.com/vinsol-spree-contrib/spree-admin-insights) extension. Supported with latest version of [spree](https://github.com/spree/spree). It includes all the reports that spree-admin-insignts has, along with some additional useful reports.
+As e-commerce business is growing rapidly and with rapid growth comes great competition, so in order to stand out tall in the market it is necessary to know your business standing accurately, to help the business with this, [Spree Edge](https://github.com/spree-edge) has come up with  an updated version of vinsol spree-admin-insights extension, Supported with latest version of spree. It includes all the reports that spree-admin-insights has and that too store specific.
 
 ## Key Features
 
-* It includes all reports of spree spree-admin-insights.
-* It includes additional reports that includes bla bla bla. 
-* Added support with latest spree version.
+### Financial Analysis - Involves reports around sales, payment methods and shipping etc.
+
+  - **Payment Method Transactions** -  Shows the total amount of payment done with the different payment methods.
+  - **Payment Method Transactions Conversion Rate** - Shows the conversion rates and total payment count done with different payment methods per month.
+  - **Shipping Cost** - Shows the monthly shipping revenue generated with different shipping methods.
+  - **Sales Tax** - Shows the monthly sales tax on different zones.  
+  - **Sales Performance** - Shows the total sale price, cost price, promotional discount per month.
+
+### Product Analysis - Insights of product purchase, abandoned cart etc
+
+  - **Best Selling Products** - Shows the total sold count of products.
+  - **Cart Additions** - Shows the product present in the user's cart.
+  - **Unique Purchases** - Shows the total number of products purchased by different users. 
+  - **Returned Products** - Shows the total number of products returned. 
+
+### Promotion Analysis: Reports of promotional costs etc are available.
+
+  - **Promotional Cost** - Shows the number of promotion coupons used by the user and total discount.
+
+### User Analysis: Includes elaborate user analysis.
+
+  - **Users Not Converted** - Shows users who started checkout but not completed order.
+  - **Users Who Recently Purchased** - Shows user’s total purchased count and recently purchased date and order number.
 
 ## Installation
 
@@ -33,6 +53,14 @@ This extension is an updated version of vinsol [spree-admin-insights](https://gi
 4. Restart your server
 
   If your server was running, restart it so that it can find the assets properly.
+  
+##Demo
+
+
+
+https://user-images.githubusercontent.com/80153749/191724213-ba20dc02-9399-43fb-9017-0ff31c936acb.mp4
+
+
 
 ## Testing
 
