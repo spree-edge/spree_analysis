@@ -6,7 +6,7 @@ As e-commerce business is growing rapidly and with rapid growth comes great comp
 
 ## Key Features
 
-### Financial Analysis - Involves reports around sales, payment methods and shipping etc.
+### Financial Analysis - Reports related to sales, payment methods, shipping etc.
 
   - **Payment Method Transactions** -  Shows the total amount of payment done with the different payment methods.
   - **Payment Method Transactions Conversion Rate** - Shows the conversion rates and total payment count done with different payment methods per month.
@@ -14,18 +14,18 @@ As e-commerce business is growing rapidly and with rapid growth comes great comp
   - **Sales Tax** - Shows the monthly sales tax on different zones.  
   - **Sales Performance** - Shows the total sale price, cost price, promotional discount per month.
 
-### Product Analysis - Insights of product purchase, abandoned cart etc
+### Product Analysis - Reports related to product purchase, product returned, abandoned cart etc.
 
   - **Best Selling Products** - Shows the total sold count of products.
   - **Cart Additions** - Shows the product present in the user's cart.
   - **Unique Purchases** - Shows the total number of products purchased by different users. 
   - **Returned Products** - Shows the total number of products returned. 
 
-### Promotion Analysis: Reports of promotional costs etc are available.
+### Promotion Analysis: Reports related to promotional cost.
 
   - **Promotional Cost** - Shows the number of promotion coupons used by the user and total discount.
 
-### User Analysis: Includes elaborate user analysis.
+### User Analysis: Reports related to detailed user analysis.
 
   - **Users Not Converted** - Shows users who started checkout but not completed order.
   - **Users Who Recently Purchased** - Shows user’s total purchased count and recently purchased date and order number.
