@@ -1,4 +1,4 @@
-# Spree Analysis [WIP]
+# Spree Analysis
 
 ## About
 
