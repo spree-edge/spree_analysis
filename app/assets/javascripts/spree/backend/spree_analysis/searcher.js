@@ -62,7 +62,7 @@ Searcher.prototype.addSearchStatus = function () {
       }
 
       label = label.text() + ': ' + ransack_value;
-      filter = '<span class="js-filter badge badge-secondary d-inline-flex align-items-center" data-ransack-field="' + ransack_field + '">' + label + '<i class="icon icon-cancel ml-2 js-delete-filter"></i></span>';
+      filter = '<span class="js-filter label label-default" data-ransack-field="' + ransack_field + '">' + label + '<span class="icon icon-delete js-delete-filter"></span></span>';
 
       filtersContainer.append(filter).show();
     }

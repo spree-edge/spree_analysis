@@ -21,11 +21,11 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  spree_version = '>=4.4.0'
+  spree_version = '>=4.2.0'
   s.add_dependency 'spree', spree_version
   s.add_dependency 'spree_extension'
   s.add_dependency 'wicked_pdf'
-  s.add_dependency 'wkhtmltopdf-binary'
+  s.add_dependency 'wkhtmltopdf-binary-edge'
 
   s.add_development_dependency 'deface'
   s.add_development_dependency 'spree_dev_tools'

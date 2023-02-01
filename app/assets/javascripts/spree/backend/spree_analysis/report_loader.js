@@ -207,7 +207,7 @@ ReportLoader.prototype.populateInitialData = function() {
   this.fetchChartDataWithoutState(location.href, $selectedOption);
 };
 
-document.addEventListener("spree:load", function() {
+$(function() {
   var inputs = {
     insightsDiv:      $('#report-div'),
     reportsSelectBox: $('#reports'),
