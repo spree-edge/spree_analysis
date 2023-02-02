@@ -208,21 +208,25 @@ ReportLoader.prototype.populateInitialData = function() {
 };
 
 $(function() {
-  var inputs = {
-    insightsDiv:      $('#report-div'),
-    reportsSelectBox: $('#reports'),
-    resetButton: $('#reset'),
-    refreshButton: $('#refresh'),
-    removePaginationButton: $('#remove-pagination'),
-    applyPaginationButton: $('#apply-pagination'),
-    tableHelpers: $('#table-helpers'),
-    filterDiv: $('#search-div'),
-    paginatorDiv: $('#paginator-div'),
-    chartContainer: $('#chart-container'),
-    downloadLinks: $('.download-link')
-  },
-    reportLoader = new ReportLoader(inputs);
-  reportLoader.init();
-  reportLoader.bindEvents();
-  reportLoader.populateInitialData();
+  var reports_page = $('#reports')
+
+  if (reports_page.length > 0) {
+    var inputs = {
+        insightsDiv:      $('#report-div'),
+        reportsSelectBox: $('#reports'),
+        resetButton: $('#reset'),
+        refreshButton: $('#refresh'),
+        removePaginationButton: $('#remove-pagination'),
+        applyPaginationButton: $('#apply-pagination'),
+        tableHelpers: $('#table-helpers'),
+        filterDiv: $('#search-div'),
+        paginatorDiv: $('#paginator-div'),
+        chartContainer: $('#chart-container'),
+        downloadLinks: $('.download-link')
+      },
+        reportLoader = new ReportLoader(inputs);
+      reportLoader.init();
+      reportLoader.bindEvents();
+      reportLoader.populateInitialData();
+  } 
 });
