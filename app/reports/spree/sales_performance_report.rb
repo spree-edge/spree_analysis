@@ -92,6 +92,7 @@ module Spree
     private def order_with_line_items
       line_item_ar = Spree::LineItem.arel_table
       Spree::Order
+        .where(store_id: @current_store.id)
         .where.not(completed_at: nil)
         .where(created_at: reporting_period)
         .joins(:line_items)
