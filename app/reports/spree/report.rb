@@ -2,7 +2,7 @@ module Spree
   class Report
 
     attr_accessor :sortable_attribute, :sortable_type, :total_records,
-                  :records_per_page, :current_page, :paginate, :search, :reporting_period
+                  :records_per_page, :current_page, :paginate, :search, :reporting_period, :current_store
     alias_method  :sort_direction, :sortable_type
     alias_method  :paginate?, :paginate
 
@@ -44,6 +44,7 @@ module Spree
       self.records_per_page = options[:records_per_page]
       self.current_page = options[:offset]
       self.paginate = options[:paginate]
+      self.current_store = options[:store] #current_store params in report instance
       extract_reporting_period
       determine_report_time_scale
       if self.class::SORTABLE_ATTRIBUTES.present?

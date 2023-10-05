@@ -26,7 +26,8 @@ module Spree
     end
 
     private def query_with_inventory_unit_quantities
-      Spree::ReturnAuthorization.joins(return_items: { inventory_unit: { variant: :product } })
+      Spree::ReturnAuthorization.joins(:order).joins(return_items: { inventory_unit: { variant: :product } })
+        .where(spree_orders: { store_id: @current_store.id })
         .where(spree_return_items: { created_at: reporting_period })
         .group('spree_variants.id', 'spree_products.name', 'spree_products.slug', 'spree_variants.sku')
         .select(
@@ -38,7 +39,8 @@ module Spree
     end
 
     private def query_without_inventory_unit_quantities
-      Spree::ReturnAuthorization.joins(return_items: { inventory_unit: { variant: :product } })
+      Spree::ReturnAuthorization.joins(:order).joins(return_items: { inventory_unit: { variant: :product } })
+        .where(spree_orders: { store_id: @current_store.id })
         .where(spree_return_items: { created_at: reporting_period })
         .group('spree_variants.id', 'spree_products.name', 'spree_products.slug', 'spree_variants.sku')
         .select(

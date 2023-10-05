@@ -18,7 +18,7 @@ module Spree
     end
 
     def report_query
-      Spree::Order
+      Spree::Order.where(store_id: @current_store.id)
         .incomplete
         .joins(line_items: { variant: :product })
         .where(created_at: reporting_period)
