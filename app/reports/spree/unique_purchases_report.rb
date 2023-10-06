@@ -24,7 +24,7 @@ module Spree
           .joins(:order)
           .joins(:variant)
           .joins(:product)
-          .where(spree_orders: { state: 'complete', completed_at: reporting_period })
+          .where(spree_orders: { state: 'complete', completed_at: reporting_period, store_id: @current_store.id })
           .group('variant_id', 'spree_variants.sku', 'spree_products.slug', 'spree_products.name')
           .select(
             'spree_variants.sku   as sku',

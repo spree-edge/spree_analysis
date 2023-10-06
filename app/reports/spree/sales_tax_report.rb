@@ -49,6 +49,7 @@ module Spree
       Spree::TaxRate
         .joins(adjustments: :order)
         .joins(:zone)
+        .where(spree_orders: { store_id: @current_store.id })
         .where(spree_adjustments: { adjustable_type: 'Spree::LineItem' })
         .where(spree_orders: { completed_at: reporting_period })
         .select(
