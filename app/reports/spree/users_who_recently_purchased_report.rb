@@ -51,6 +51,7 @@ module Spree
 
     private def all_orders_with_users
       Spree::Order
+        .where(store_id: @current_store.id)
         .where(Spree::Order.arel_table[:email].matches(email_search))
         .where(spree_orders: { completed_at: reporting_period })
         .select(

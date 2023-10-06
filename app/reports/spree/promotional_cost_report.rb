@@ -66,8 +66,9 @@ module Spree
 
     private def eligible_promotions
       Spree::PromotionAction
-        .joins(:promotion)
+        .joins(promotion: [order_promotions: :order])
         .joins(:adjustment)
+        .where(spree_orders: { store_id: @current_store.id })
         .where(spree_adjustments: { created_at: reporting_period })
         .select(
           'spree_promotions.starts_at   as promotion_start_date',
