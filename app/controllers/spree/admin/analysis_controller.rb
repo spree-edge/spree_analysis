@@ -4,7 +4,7 @@ module Spree
       before_action :ensure_report_exists, :set_default_pagination, only: [:show, :download]
       before_action :set_reporting_period, only: [:index, :show, :download]
       before_action :load_reports, only: [:index, :show]
-      before_action :set_current_store, only: [:show, :download]
+      before_action :fetch_current_store, only: [:show, :download]
 
       def index
         respond_to do |format|
@@ -48,7 +48,7 @@ module Spree
       end
 
       private
-        def set_current_store
+        def fetch_current_store
           params[:store] = current_store
         end
 
