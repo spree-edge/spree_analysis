@@ -55,6 +55,7 @@ module Spree
 
     private def order_with_shipments
       Spree::Order
+        .where(store_id: @current_store.id)
         .where.not(completed_at: nil)
         .where(completed_at: reporting_period)
         .joins(:shipments)

@@ -60,15 +60,16 @@ module Spree
     end
 
     private def payment_methods
-      Spree::PaymentMethod
-        .joins(:payments)
-        .where(spree_payments: { created_at: reporting_period })
-        .select(
-          'spree_payment_methods.id as payment_method_id',
-          'name as payment_method_name',
-          'state as payment_state',
-          *time_scale_selects('spree_payments')
-        )
+      ::Spree::PaymentMethod
+      .joins(:stores, payments: [:order])
+      .where('spree_payment_methods_stores.store_id = ? AND spree_orders.store_id = ?', @current_store.id.to_s, @current_store.id.to_s)
+      .where(spree_payments: { created_at: reporting_period })
+      .select(
+      'spree_payment_methods.id as payment_method_id',
+      'spree_payment_methods.name as payment_method_name',
+      'spree_payments.state as payment_state',
+      *time_scale_selects('spree_payments')
+      )
     end
   end
 end
