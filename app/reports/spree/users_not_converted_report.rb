@@ -34,6 +34,8 @@ module Spree
       orders = Spree::Order.arel_table
 
       Spree::User
+        .joins(orders: :store)
+        .where(spree_stores: { id: @current_store.id })
         .where(created_at: reporting_period)
         .where(Spree::User.arel_table[:email].matches(email_search))
         .select(
