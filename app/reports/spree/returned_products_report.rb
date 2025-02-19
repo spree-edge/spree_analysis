@@ -26,13 +26,13 @@ module Spree
     end
 
     private def query_with_inventory_unit_quantities
-      Spree::ReturnAuthorization.joins(:order).joins(return_items: { inventory_unit: { variant: :product } })
+      Spree::ReturnAuthorization.joins(:order).joins(return_items: { inventory_unit: { variant: {product: :translations} } })
         .where(spree_orders: { store_id: @current_store.id })
         .where(spree_return_items: { created_at: reporting_period })
         .group('spree_variants.id', 'spree_products.name', 'spree_products.slug', 'spree_variants.sku')
         .select(
-          'spree_products.name       as product_name',
-          'spree_products.slug       as product_slug',
+          'spree_product_translations.name       as product_name',
+          'spree_product_translations.slug       as product_slug',
           'spree_variants.sku        as sku',
           'sum(spree_inventory_units.quantity)  as return_count'
         )

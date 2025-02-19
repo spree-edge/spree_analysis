@@ -35,15 +35,16 @@ module Spree
       .joins(:variant)
       .joins(:product)
       .joins(:inventory_units)
+      .joins(product: :translations)
       .where(spree_orders: { store_id: @current_store.id })
-      .where(::Spree::Product.arel_table[:name].matches(search_name))
+      .where(::Spree::Product::Translation.arel_table[:name].matches(search_name))
       .where(spree_orders: { state: 'complete' })
       .where(spree_orders: { completed_at: reporting_period })
       .where.not(spree_inventory_units: { state: 'returned' })
       .group(:variant_id, :product_name, :product_slug, 'spree_variants.sku')
       .select(
-      'spree_products.name as product_name',
-      'spree_products.slug as product_slug',
+      'spree_product_translations.name as product_name',
+      'spree_product_translations.slug as product_slug',
       'spree_variants.sku as sku',
       'sum(spree_inventory_units.quantity) as sold_count'
       )
